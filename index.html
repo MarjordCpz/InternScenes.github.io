@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Open-Vocabulary, Physical skill, Interactive agent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InternScenes: A Large-scale Simulatable Indoor Scene Dataset with Realistic Layouts</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.svg">
+
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="stylesheet" href="static/css/custom.css" />
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+<!--  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<!--  <script defer src="static/js/fontawesome.all.min.js"></script>-->
+  <script src="https://kit.fontawesome.com/d383128d10.js" crossorigin="anonymous"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+
+
+
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+        "three": "https://unpkg.com/three@0.127.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.127.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC36P9N5PB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KC36P9N5PB');
+</script>
+
+
+<body>
+
+  <!-- <section class="hero" style="position: relative; overflow: hidden;"> -->
+    <section id="hero-section" class="hero" style="position: relative; overflow: hidden;">
+    <div style="position: relative; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden;">
+
+      <img src="static/images/Teaser.png" alt="Teaser Image"
+           style="position: absolute; top: 50%; left: 50%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover; opacity: 0.7;">
+
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)); z-index: 1;"></div>
+  
+      <div style="position: relative; z-index: 2; color: white;">
+            <h1 class="title is-1 has-text-white" style="font-size: 4rem;">
+              <span style="color: #ffffff;">Intern</span><span style="color: #ffffff;">Scenes</span>:
+              A Large-scale Simulatable Indoor Scene Dataset with Realistic Layouts
+            </h1>
+              
+            <div class="is-size-5 publication-authors" style="">
+              <span class="author-block">
+                <a href="https://github.com/PC1E-bit">Weipeng Zhong</a><sup>1✶</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/MarjordCpz">Peizhou Cao</a><sup>1✶</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://yixchen.github.io/">Yichen Jin</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/YandanYang">Luo Li</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://xiaoyao-li.github.io/">Wenzhe Cai</a><sup>1,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://metascenes.github.io/">Jingli Lin</a><sup>1,4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://metascenes.github.io/">Hanqing Wang</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://liqing.io/">Zhaoyang Lyu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://liangwei-bit.github.io/web/">Tai Wang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://zhusongchun.net/">Bo Dai</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://tengyu.ai/">Xudong Xu</a><sup>1†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://siyuanhuang.com/">Jiangmiao Pang</a><sup>1†</sup>,
+              </span>
+            </div>
+
+            <!-- <div class="is-size-5 publication-authors" style="">
+              <span class="author-block"><sup>1</sup>State Key Laboratory of General Artificial Intelligence, BIGAI,</span>
+              <span class="author-block"><sup>2</sup>School of Computer Science & Technology, Beijing Institute of Technology,</span>
+              <span class="author-block"><sup>3</sup>Dept. of Automation, Tsinghua University,</span>
+              <span class="author-block"><sup>4</sup>School of Information Science & Technology, University of Science and Technology of China</span>
+            </div> -->
+
+            <div class="is-size-6" style="color: #e9e8e8; margin-bottom: -1.5rem;">
+              <span>✶ Equal Contribution, † Corresponding Author</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+
+
+
+  <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                 
+                <!-- From Uiverse.io by CristianMontoya98 --> 
+                <a href="https://arxiv.org/abs/2505.02388">
+                  <button class="btn"> 
+                    <span class="link-block">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                  </button>
+                </a>
+
+                <a href="https://arxiv.org/abs/2505.02388" class="btn-link">
+                  <button class="btn">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </button>
+                </a>
+
+                <a href="https://arxiv.org/abs/2505.02388">
+                  <button class="btn"> 
+                    <span class="link-block">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </button>
+                </a>
+
+                <a href="https://arxiv.org/abs/2505.02388">
+                  <button class="btn"> 
+                    <span class="link-block">
+                        <span class="icon">
+                          <i class="far fa-images"></i>
+                      </span>
+                      <span>Data</span>
+                    </button>
+                </a>
+
+              </div>
+            </div>
+
+
+
+<!-- Paper abstract -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">📋 Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            The advancement of Embodied AI heavily relies on large-scale, simulatable 3D scene datasets characterized by scene diversity and realistic layouts.
+            However, existing datasets typically suffer from limitations in diversity or simulatability, sanitized layouts lacking small items, and severe object collisions.
+            To address these shortcomings, we introduce <strong>OmniScenes</strong>, a novel large-scale simulatable indoor scene dataset comprising approximately 40,000 diverse scenes by integrating three disparate scene sources, i.e., real-world scans, procedurally generated scenes, and designer-created scenes, including 1.96M objects and 800k CAD models that cover 15 common scene types and 288 object classes, resulting in complex layouts that have most-ever 41.5 objects per region in average.
+            Our comprehensive data processing pipeline ensures simulatability by creating real-to-sim replicas for real-world scans, achieves realistic layouts by preserving small items, and enhances interactivity by incorporating interactive objects and resolving collisions.
+            We demonstrate the value of OmniScenes with two benchmark applications: scene layout generation and point-goal navigation. Both show the new challenges posed by the complex and realistic layouts. More importantly, OmniScenes paves the way for scaling up the model training for both tasks, making the generation and navigation in such complex scenes possible. We commit to open-sourcing the data, models, and benchmarks to benefit the community.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+
+    <div class="hero-body is-small">
+      <img src="static/images/Compose.png" alt="Teaser Image" style="width: 100%;">
+    </div>
+      <!-- Teaser demo -->
+
+<!-- Experiments -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+
+      <!-- Experiments -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">🎬 Demo Video</h2>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <div class="video-container" style="position: relative; padding-bottom: 70.25%; height: 0; overflow: hidden;">
+          <iframe src=""
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- End teaser demo -->
+
+      <!-- Dataset1 -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">🏘️ InternScenes-Real2Sim</h2>
+          <div class="publication-gif">
+            <!-- <video autoplay muted loop playsinline style="width: 100%;" controls>
+              <source src="./static/videos/dataset.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video> -->
+            <img src="static/images/Real2Sim-pipeline.png" alt="Dataset Overview" style="width: 100%;">
+              <p style="text-align: center;">
+                <span class="title is-6">Pipeline</span> for retrieving synthetic scenes from real scan scenes.
+              </p>
+          </div>
+        </div>
+      </div>
+
+      <!--/ Dataset2 -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">🎮 InternScenes-Synthetic</h2>
+          <div class="publication-gif">
+            <!-- <video autoplay muted loop playsinline style="width: 100%;" controls>
+              <source src="./static/videos/dataset.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video> -->
+            <img src="static/images/Synthetic-pipeline.png" alt="Dataset Overview" style="width: 100%;">
+              <p style="text-align: center;">
+                <span class="title is-6">Pipeline</span> for annotating and processing raw scenes to extract precise layout information.
+              </p>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Experiments -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+  
+        <!-- Experiments -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h1 class="title is-3">🌠 Samples</h1>
+          </div>
+        </div>
+        <!--/ Experiments -->
+      </div>
+    </div>
+  </section>
+<!--/ Experiments -->
+
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4 has-text-centered has-text-primary has-text-weight-bold">
+        Comprehensive 3D Assets (*.usd and *.glb) with Canonical Poses and Semantic Labels
+      </h2>
+    </div>
+  </div>
+  <div>
+      <p style="text-align: center;">
+        🔎 All 3D CAD models have been carefully annotated manually
+      </p>
+  </div>
+  <div class="container">
+    <div id="app" class="custom-card-container">
+      <!-- bullky items -->
+      <card data-image="static/images/3dassets/Large/bed.gif">
+        <h2 slot="header">Bed</h2>
+        <p slot="content">Bulky Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Large/bookshelf.gif">
+        <h2 slot="header">Bookshelf</h2>
+        <p slot="content">Bulky Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Large/chair.gif">
+        <h2 slot="header">Chair</h2>
+        <p slot="content">Bulky Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Large/couch.gif">
+        <h2 slot="header">Couch</h2>
+        <p slot="content">Bulky Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Large/desk.gif">
+        <h2 slot="header">Desk</h2>
+        <p slot="content">Bulky Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Large/refrigerator.gif">
+        <h2 slot="header">Refrigerator</h2>
+        <p slot="content">Bulky Item</p>
+      </card>
+
+      <!-- medium items -->
+      <card data-image="static/images/3dassets/Medium/electriccooker.gif">
+        <h2 slot="header">Electric Cooker</h2>
+        <p slot="content">Medium Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Medium/microwave.gif">
+        <h2 slot="header">Microwave</h2>
+        <p slot="content">Medium Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Medium/oven.gif">
+        <h2 slot="header">Oven</h2>
+        <p slot="content">Medium Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Medium/pan.gif">
+        <h2 slot="header">Pan</h2>
+        <p slot="content">Medium Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Medium/pot.gif">
+        <h2 slot="header">Pot</h2>
+        <p slot="content">Medium Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Medium/lamp.gif">
+        <h2 slot="header">Lamp</h2>
+        <p slot="content">Medium Item</p>
+      </card>
+
+      <!-- small items -->
+      <card data-image="static/images/3dassets/Small1/clock.gif">
+        <h2 slot="header">Clock</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small1/clothes.gif">
+        <h2 slot="header">Clothes</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small1/cup.gif">
+        <h2 slot="header">Cup</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small1/fan.gif">
+        <h2 slot="header">Fan</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small1/pillow.gif">
+        <h2 slot="header">Pillow</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small1/phone.gif">
+        <h2 slot="header">Phone</h2>
+        <p slot="content">Small Item</p>
+      </card>
+
+      <!-- small items -->
+      <card data-image="static/images/3dassets/Small2/keyboard.gif">
+        <h2 slot="header">Keyboard</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small2/mouse.gif">
+        <h2 slot="header">Mouse</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small2/laptop.gif">
+        <h2 slot="header">Laptop</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small2/tray.gif">
+        <h2 slot="header">Tray</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small2/shoe.gif">
+        <h2 slot="header">Shoe</h2>
+        <p slot="content">Small Item</p>
+      </card>
+      <card data-image="static/images/3dassets/Small2/toy.gif">
+        <h2 slot="header">Toy</h2>
+        <p slot="content">Small Item</p>
+      </card>
+    </div>
+  </div>
+
+</section>
+
+<script src="static/js/app.js"></script>
+
+
+
+
+
+
+
+<section class="show-gif-section">
+
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3 has-text-left has-text-primary has-text-weight-bold">
+        Retrieving from Real Scans to Synthetic Scenes
+      </h2>
+    </div>
+  </div>
+  <!-- <div>
+      <p style="text-align: left;">
+        🔎 All 3D CAD models have been carefully annotated manually
+      </p>
+  </div> -->
+</section>
+
+
+<!-- 3D demo-->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-4 ">3D Visualization</h2>
+      <h2 class="subtitle" style="font-size: 1.0em; color: rgb(219, 54, 32);">
+        <b>Note</b>: Interactive 3D scene viewer. Click the button below to explore.
+      </h2> -->
+
+      <!-- 按钮触发弹窗 -->
+      <!-- <button class="button is-primary" id="openModalBtn">Open Scene Viewer</button>
+
+    </div>
+  </div>
+</section> -->
+
+  <!-- Modal 弹出框 -->
+<!-- <div class="modal" id="sceneModal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box has-text-centered">
+      <h2 class="title is-4">3D Visualization</h2>
+      <p style="margin-bottom: 1em;">Explore interactive 3D scenes in a dedicated viewer.</p>
+      <p style="margin-bottom: 1em;">(The following interface may take some time to load)</p>
+      <a href="viewer.html" class="button is-link" target="_blank">Launch Viewer</a>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div> -->
+
+  <!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("sceneModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = modal.querySelector(".modal-close");
+    const modalBg = modal.querySelector(".modal-background");
+
+    openBtn.addEventListener("click", () => {
+      modal.classList.add("is-active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("is-active");
+    });
+
+    modalBg.addEventListener("click", () => {
+      modal.classList.remove("is-active");
+    });
+  });
+</script> -->
+
+<!-- End 3D demo-->
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <h2 class="title is-4">Real2Sim Comparison</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <div class="bal-block">
+              <div id="h3d-one" class="bal-container">
+                <div class="bal-after">
+                  <video muted autoplay="autoplay" loop="loop" height="100%">
+                    <source src="static/videos/scene0679_00_pcd.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video muted autoplay="autoplay" loop="loop" height="100%">
+                      <source src="static/videos/scene0679_00.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div class="bal-block">
+              <div id="h3d-two" class="bal-container">
+                <div class="bal-after">
+                  <video muted autoplay="autoplay" loop="loop" height="100%">
+                    <source src="static/videos/scene0472_00_pcd.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video muted autoplay="autoplay" loop="loop" height="100%">
+                      <source src="static/videos/scene0472_00.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div class="bal-block">
+              <div id="h3d-three" class="bal-container">
+                <div class="bal-after">
+                  <video muted autoplay="autoplay" loop="loop" height="100%">
+                    <source src="static/videos/scene0463_00_pcd.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video muted autoplay="autoplay" loop="loop" height="100%">
+                      <source src="static/videos/scene0463_00.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div class="bal-block">
+              <div id="h3d-four" class="bal-container">
+                <div class="bal-after">
+                  <video muted autoplay="autoplay" loop="loop" height="100%">
+                    <source src="static/videos/scene0467_00_pcd.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video muted autoplay="autoplay" loop="loop" height="100%">
+                      <source src="static/videos/scene0467_00.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div class="bal-block">
+              <div id="h3d-five" class="bal-container">
+                <div class="bal-after">
+                  <video muted autoplay="autoplay" loop="loop" height="100%">
+                    <source src="static/videos/scene0245_00_pcd.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <video muted autoplay="autoplay" loop="loop" height="100%">
+                      <source src="static/videos/scene0245_00.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="has-text-centered">
+      <h2 class="title is-3">BibTeX</h2>
+    </div>
+    <pre><code>@inproceedings{   xxx
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the template of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+
+
+
+</body>
+
+
+
+<script>
+  new BeforeAfter({id: '#h3d-one'});
+  new BeforeAfter({id: '#h3d-two'});
+  new BeforeAfter({id: '#h3d-three'});
+  new BeforeAfter({id: '#h3d-four'});
+  new BeforeAfter({id: '#h3d-five'});
+  // new BeforeAfter({id: '#h3d-six'});
+</script>
+
+</html>
