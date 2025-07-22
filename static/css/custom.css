@@ -326,8 +326,8 @@
 
 .my-video-card {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background-color: #000;
   display: flex;
   flex-direction: column;
@@ -345,10 +345,10 @@
   inset: 0;
   left: -5px;
   margin: auto;
-  width: 410px;
-  height: 410px;
+  width: 510px;
+  height: 510px;
   border-radius: 10px;
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  background: linear-gradient(-45deg, #33bdfb, #2b86fc, #2828ba);
   z-index: -10;
   pointer-events: none;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -359,7 +359,7 @@
   z-index: -1;
   position: absolute;
   inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  background: linear-gradient(-45deg, #33bdfb, #2b86fc, #2828ba);
   transform: translate3d(0, 0, 0) scale(0.95);
   filter: blur(20px);
 }
@@ -388,6 +388,68 @@
 }
 
 
+.my-video-card2 {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  /* margin: 0 auto; */
+  /* cursor: pointer; */
+}
+
+.my-video-card2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 510px;
+  height: 510px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #fe737d, #fe236d, #6c0c65);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.my-video-card2::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fe737d, #fe236d, #6c0c65);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.my-video-card2 p:not(.heading) {
+  font-size: 14px;
+}
+
+.my-video-card2 p:last-child {
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.my-video-card2:hover::after {
+  filter: blur(30px);
+}
+
+.my-video-card2:hover::before {
+  transform: rotate(-90deg) scaleX(1) scaleY(1);
+}
 
 
 
@@ -522,8 +584,8 @@
   top: 0;
   left: 0;
   /* background-color: #876eafad; */
-  background: linear-gradient(to bottom, #bbaaff, #503e6d);;
-  box-shadow: inset 0 0 25px #3a196e;
+  background: linear-gradient(-45deg, #06a3a5, #036c5edd);
+  box-shadow: inset 0 0 25px #74dbb5;
 }
 
 .globe .wrapper span:nth-child(2) {
