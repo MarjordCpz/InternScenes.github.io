@@ -328,7 +328,7 @@
   position: relative;
   width: 500px;
   height: 500px;
-  background-color: #000;
+  background-color: #291f80ca;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -392,7 +392,7 @@
   position: relative;
   width: 500px;
   height: 500px;
-  background-color: #000;
+  background-color: #d3a826c5;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -450,17 +450,6 @@
 .my-video-card2:hover::before {
   transform: rotate(-90deg) scaleX(1) scaleY(1);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -750,9 +739,9 @@
   align-items: center;
   cursor: pointer;
   border: none;
-  border-radius: 15px;
+  border-radius: 35px;
   font-weight: 1000;
-  /* width: 100px; */
+  height: 60px;
 }
 
 .switch span {
