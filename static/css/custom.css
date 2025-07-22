@@ -326,8 +326,8 @@
 
 .my-video-card {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   background-color: #000;
   display: flex;
   flex-direction: column;
@@ -419,8 +419,8 @@
 
 .section-path {
   position: relative;
-  width: 850px;
-  height: 36px;
+  width: 1250px;
+  height: 46px;
   border-radius: 35px;
   margin: 0 auto;
   text-align: center;
@@ -437,8 +437,8 @@
 
   cursor: grab;
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   overflow: hidden;
   /* margin-top: 2px;
   margin-left: 2px; */
@@ -521,8 +521,9 @@
   height: 528px;
   top: 0;
   left: 0;
-  background-color: #876eaf;
-  box-shadow: inset 0 0 25px #342848;
+  /* background-color: #876eafad; */
+  background: linear-gradient(to bottom, #bbaaff, #503e6d);;
+  box-shadow: inset 0 0 25px #3a196e;
 }
 
 .globe .wrapper span:nth-child(2) {

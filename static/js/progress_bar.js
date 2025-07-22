@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const containerRect = container.getBoundingClientRect();
     const globeRect = globe.getBoundingClientRect();
   
-    const edgePadding = 10;
+    const edgePadding = 6.5;
     const maxLeft = containerRect.width - globeRect.width - edgePadding;
-    const minLeft = edgePadding;
+    const minLeft = 0;
   
     function updateVideosToCurrentTime() {
       if (videoLeft.duration) {
