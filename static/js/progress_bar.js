@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // ✅ 视频组列表，每组包含一对视频
     const videoGroups = [
       { left: 'static/videos/scene_0000/realscan.mkv', right: 'static/videos/scene_0000/synthetic.mkv' },
-      { left: 'static/videos/scene_0000/realscan.mkv', right: 'static/videos/scene_0000/synthetic.mkv' },
-      { left: 'static/videos/scene_0000/realscan.mkv', right: 'static/videos/scene_0000/synthetic.mkv' }
+      { left: 'static/videos/scene_0006/realscan.mkv', right: 'static/videos/scene_0006/synthetic.mkv' },
+      { left: 'static/videos/scene_0083/realscan.mkv', right: 'static/videos/scene_0083/synthetic.mkv' }
     ];
   
     let currentGroupIndex = 0;
