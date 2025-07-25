@@ -326,15 +326,17 @@
 
 .my-video-card {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 270px;
   background-color: #291f80ca;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 12px;
+  padding: 10px;
   gap: 12px;
   border-radius: 8px;
+  align-items: center;
+  justify-content: center;
   /* margin: 0 auto; */
   /* cursor: pointer; */
 }
@@ -345,8 +347,8 @@
   inset: 0;
   left: -5px;
   margin: auto;
-  width: 510px;
-  height: 510px;
+  width: 490px;
+  height: 280px;
   border-radius: 10px;
   background: linear-gradient(-45deg, #33bdfb, #2b86fc, #2828ba);
   z-index: -10;
@@ -384,21 +386,23 @@
 }
 
 .my-video-card:hover::before {
-  transform: rotate(-90deg) scaleX(1) scaleY(1);
+  transform: rotate(-180deg) scaleX(1) scaleY(1);
 }
 
 
 .my-video-card2 {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 270px;
   background-color: #d3a826c5;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 12px;
+  padding: 10px;
   gap: 12px;
   border-radius: 8px;
+  align-items: center;
+  justify-content: center;
   /* margin: 0 auto; */
   /* cursor: pointer; */
 }
@@ -409,8 +413,8 @@
   inset: 0;
   left: -5px;
   margin: auto;
-  width: 510px;
-  height: 510px;
+  width: 490px;
+  height: 280px;
   border-radius: 10px;
   background: linear-gradient(-45deg, #fe737d, #fe236d, #6c0c65);
   z-index: -10;
@@ -448,7 +452,7 @@
 }
 
 .my-video-card2:hover::before {
-  transform: rotate(-90deg) scaleX(1) scaleY(1);
+  transform: rotate(-180deg) scaleX(1) scaleY(1);
 }
 
 
