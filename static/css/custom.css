@@ -299,7 +299,7 @@
     /* z-index: 1; */
   }  
 
-  @keyframes rotBGimg {
+  /* @keyframes rotBGimg {
     from {
       transform: rotate(0deg);
     }
@@ -307,7 +307,7 @@
     to {
       transform: rotate(360deg);
     }
-  }
+  } */
   /* .card:hover:before {
     background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
     animation: rotBGimg 3.5s linear infinite;
@@ -385,9 +385,9 @@
   filter: blur(30px);
 }
 
-.my-video-card:hover::before {
+/* .my-video-card:hover::before {
   transform: rotate(-180deg) scaleX(1) scaleY(1);
-}
+} */
 
 
 .my-video-card2 {
@@ -451,9 +451,9 @@
   filter: blur(30px);
 }
 
-.my-video-card2:hover::before {
+/* .my-video-card2:hover::before {
   transform: rotate(-180deg) scaleX(1) scaleY(1);
-}
+} */
 
 
 

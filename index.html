@@ -154,7 +154,7 @@
                 <!-- PDF Link. -->
                  
                 <!-- From Uiverse.io by CristianMontoya98 --> 
-                <a href="https://marjordcpz.github.io/InternScenes.github.io/">
+                <a href="./static/pdf/InternScenes__A_Large_scale_Simulatable_Indoor_Scene_Dataset_with_Realistic_Layouts.pdf">
                   <button class="btn"> 
                     <span class="link-block">
                         <span class="icon">
@@ -207,22 +207,13 @@
           <h2 class="title is-3">📋 Abstract</h2>
           <div class="content has-text-justified">
             <p>
-                The advancement of Embodied AI heavily relies on large-scale, interactive 3D scene datasets characterized by scene diversity and
-               realistic layouts. 
-                However, existing datasets typically suffer from limitations in diversity or simulatability, sanitized layouts lacking small items, and severe object
-               collisions. 
-                To address these shortcomings, we introduce <strong>InternScenes</strong>, a novel large-scale interactive indoor scene dataset comprising approximately <strong>40,000 diverse scenes</strong> by integrating three disparate scene sources — real-world scans, procedurally generated scenes, and
-               designer-created scenes. 
-                It includes <strong>1.96M objects</strong> and <strong>800k CAD models</strong> that cover <strong>15 common scene types</strong> and <strong>288 object classes</strong>, resulting in complex layouts with an average of <strong>41.5
-               objects per region</strong> — the highest to date. 
-                Our comprehensive data processing pipeline ensures simulatability by creating real-to-sim replicas for real-world scans, achieves realistic layouts by preserving small items, and enhances interactivity by incorporating interactive objects and
-               resolving collisions. 
-                We demonstrate the value of InternScenes through two benchmark applications: scene layout generation and
-               point-goal navigation. 
-                Both highlight the new challenges posed by the complex and
-               realistic layouts. 
-                More importantly, InternScenes paves the way for scaling up model training for both tasks, enabling generation and navigation in such complex
-               environments.
+              The advancement of Embodied AI heavily relies on large-scale, simulatable 3D scene datasets characterized by scene diversity and realistic layouts.
+              However, existing datasets typically suffer from limitations in data scale or diversity, sanitized layouts lacking small items, and severe object collisions.
+              To address these shortcomings, we introduce <strong>InternScenes</strong>, a novel large-scale simulatable indoor scene dataset comprising approximately <strong>40,000 diverse scenes</strong> by integrating three disparate scene sources, <em>i.e.</em>, real-world scans, procedurally generated scenes, and designer-created scenes, including <strong>1.96M objects</strong> and covering <strong>15 common scene types</strong> and <strong>288 object classes</strong>.
+              We particularly preserve massive small items in the scenes, resulting in realistic and complex layouts with an average of <strong>41.5
+              objects per region</strong>.
+              Our comprehensive data processing pipeline ensures simulatability by creating real-to-sim replicas for real-world scans, enhances interactivity by incorporating interactive objects into these scenes, and resolves object collisions by physical simulations.
+              We demonstrate the value of InternScenes with two benchmark applications: scene layout generation and point-goal navigation. Both show the new challenges posed by the complex and realistic layouts. More importantly, InternScenes paves the way for scaling up the model training for both tasks, making the generation and navigation in such complex scenes possible. We commit to open-sourcing the data, models, and benchmarks to benefit the whole community.
               </p>
             
           </div>
